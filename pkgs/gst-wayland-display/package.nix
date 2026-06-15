@@ -27,8 +27,8 @@ rustPlatform.buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "games-on-whales";
     repo = "gst-wayland-display";
-    rev = "stable";
-    hash = "sha256-76JRUIZzyf5mlC4PVlJNTWOd+jklcYasYFyDhdKvI88=";
+    rev = "b15285a";
+    hash = "sha256-8z5jBjEwDwLtdJBdoGtiBSAX03N9AHD95ozwQXxggxE=";
   };
 
   nativeBuildInputs = [pkg-config cargo-c rustPlatform.bindgenHook];

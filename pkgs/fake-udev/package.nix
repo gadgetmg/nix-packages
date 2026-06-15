@@ -12,8 +12,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "games-on-whales";
     repo = "wolf";
-    rev = "stable";
-    hash = "sha256-4amq0zxc4R4CAobTqoOHd0I9+34U6VbcIgI5Q3gcWQc=";
+    rev = "2f790f6";
+    hash = "sha256-2mS16Kq/PlxhAk4yNxZn4NBmR+WgcAkrxRym8bjFuTs=";
   };
 
   sourceRoot = "${src.name}/src/fake-udev";
