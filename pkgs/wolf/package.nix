@@ -133,6 +133,10 @@ in
       hash = "sha256-2mS16Kq/PlxhAk4yNxZn4NBmR+WgcAkrxRym8bjFuTs=";
     };
 
+    patches = [
+      ./wayland-socket-fullpath.patch
+    ];
+
     nativeBuildInputs = [cmake pkg-config ninja makeWrapper];
 
     buildInputs = [

@@ -1,0 +1,13 @@
+diff --git a/src/moonlight-server/sessions/common.cpp b/src/moonlight-server/sessions/common.cpp
+index d22118a..3a66cf6 100644
+--- a/src/moonlight-server/sessions/common.cpp
++++ b/src/moonlight-server/sessions/common.cpp
+@@ -42,7 +42,7 @@ void start_runner(std::shared_ptr<events::Runner> runner,
+     auto local_wayland_socket = std::filesystem::path(args->xdg_runtime_dir) / socket_name;
+     auto host_wayland_socket = std::filesystem::path(args->host->host_xdg_runtime_dir) / socket_name;
+     mounted_paths.push_back({host_wayland_socket, local_wayland_socket});
+-    full_env.set("WAYLAND_DISPLAY", socket_name);
++    full_env.set("WAYLAND_DISPLAY", local_wayland_socket);
+   }
+ 
+   /* Adding custom state folder */
