@@ -4,7 +4,6 @@
   cudaPackages,
   curl,
   elfutils,
-  fake-udev,
   fetchFromGitHub,
   gst-interpipe,
   gst-wayland-display,
@@ -202,7 +201,6 @@ in
       ];
     in ''
       wrapProgram $out/bin/wolf \
-        --prefix GST_PLUGIN_PATH : "${GST_PLUGIN_PATH}" \
-        --set WOLF_DOCKER_FAKE_UDEV_PATH "${lib.getExe' fake-udev "fake-udev"}"
+        --prefix GST_PLUGIN_PATH : "${GST_PLUGIN_PATH}"
     '';
   }
