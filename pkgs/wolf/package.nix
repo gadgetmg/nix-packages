@@ -158,6 +158,11 @@ in
       zstd
     ];
 
+    postPatch = ''
+      echo 'target_link_directories(fake-udev PRIVATE "${lib.getLib stdenv.cc.libc.static}/lib")' >> CMakeLists.txt
+      echo 'target_link_options(fake-udev PRIVATE "-static")' >> CMakeLists.txt
+    '';
+
     cmakeFlags = [
       (lib.cmakeFeature "FETCHCONTENT_SOURCE_DIR_CPPTRACE" "${cpptrace-src}")
       (lib.cmakeFeature "FETCHCONTENT_SOURCE_DIR_FMTLIB" "${fmtlib-src}")
@@ -181,11 +186,10 @@ in
       "-G Ninja"
     ];
 
-    buildPhase = "ninja wolf";
-
     installPhase = ''
       mkdir -p $out/bin
       cp ./src/moonlight-server/wolf $out/bin/wolf
+      cp ./src/fake-udev/fake-udev $out/bin/fake-udev
     '';
 
     preFixup = let
