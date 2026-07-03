@@ -85,7 +85,6 @@ rustPlatform.buildRustPackage rec {
       $out/share/vulkan/implicit_layer.d
 
     install -Dm755 LICENSE "$out/share/licenses/${pname}/LICENSE"
-    install -Dm644 dist/moonshine@.service "$out/lib/systemd/system/moonshine@.service"
     install -Dm644 dist/60-moonshine.rules "$out/lib/udev/rules.d/60-moonshine.rules"
     install -Dm644 dist/moonshine-modules.conf "$out/lib/modules-load.d/moonshine.conf"
     install -Dm644 dist/VkLayer_moonshine_wsi.json "$out/share/vulkan/implicit_layer.d/VkLayer_moonshine_wsi.json"
